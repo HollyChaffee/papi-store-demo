@@ -35,43 +35,56 @@ import org.junit.Test; //Imported from the org.junit package or folder-allows fo
         @Test //An annotation provided by JUnit called @Test that tells the JUnit that the public void method in which it is
         // used can run as a test case
         public void OpenStoreTest(){ //A test method called OpenStoreTest created to call on the PapiStore Class.
-            // Tests if the store is open or not open.
             //Given
 
-            papiStore.openStore();//
+            papiStore.openStore(); //Method openStore called to open store of object papiStore
 
             //When
-            Boolean expected = true;
-            Boolean actual = papiStore.isStoreOpen();
+            Boolean expected = true; //autoboxing; converts a primitive value into an object of the corresponding wrapper class.
+            //Converts boolean to Boolean class. expected is referencing Boolean class and is set to true.
+            Boolean actual = papiStore.isStoreOpen(); //Stating whether the store is actually open or closed. The actual
+            // references the Boolean class (true or false).
 
             //Then
             //Assert.assertEquals(expected, actual);
-            Assert.assertTrue(actual);
+            Assert.assertTrue(actual); // boolean condition asserting (stating) that the condition is true.
+            // If the condition is true, that the store is actually open, then the test will pass.
         }
 
-        @Test
-        public void allowToUseTabTestSuccess(){
+        @Test //An annotation provided by JUnit called @Test that tells the JUnit that the public void method in which it is
+        // used can run as a test case
+        public void allowToUseTabTestSuccess(){ //A public accessed method, returning nothing, to test if the
+            // allowToUseTab method is a success or not.
             // given
-            PapiStore papiStore = new PapiStore();
+            PapiStore papiStore = new PapiStore(); //Declares the variable papiStore that makes reference to the PapiStore class,
+            // creating (Instantiating) the object PapiStore. The new operator is followed by a call to the
+            // constructor, which initializes the new object of PapiStore.
 
             // when
-            Boolean expected = true;
+            Boolean expected = true; //autoboxing; converts a primitive value into an object of the corresponding wrapper class.
+            //Converts boolean to Boolean class. expected is referencing Boolean class and is set to true.
             Boolean actual = papiStore.allowToUseTab("Jamal");
 
             // then
-            Assert.assertEquals(expected, actual);
+            Assert.assertEquals(expected, actual); //Asserts that two objects are equal. assertEquals method checks if two objects
+            //are equal or not.
         }
 
-        @Test
+        @Test //An annotation provided by JUnit called @Test that tells the JUnit that the public void method in which it is
+        // used can run as a test case
         public void allowToUseTabTestFail(){
             // given
-            PapiStore papiStore = new PapiStore();
+            PapiStore papiStore = new PapiStore(); //Declares the variable papiStore that makes reference to the PapiStore class,
+            // creating (Instantiating) the object PapiStore. The new operator is followed by a call to the
+            // constructor, which initializes the new object of PapiStore.
 
             // when
-            Boolean expected = false;
-            Boolean actual = papiStore.allowToUseTab("Victor");
+            Boolean expected = false; //autoboxing; converts a primitive value into an object of the corresponding wrapper class.
+            //Converts boolean to Boolean class. expected is referencing Boolean class and is set to false.
+            Boolean actual = papiStore.allowToUseTab("Victor"); //
 
             // then
-            Assert.assertEquals(expected, actual);
+            Assert.assertEquals(expected, actual); //Asserts that two objects are equal. assertEquals method checks if two objects
+            //are equal or not.
         }
 }
